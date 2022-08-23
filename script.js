@@ -14,7 +14,7 @@ pointInput.addEventListener('keydown', function(event) {
         point.textContent = pointText;
 
         point.addEventListener('click', function() {
-            point.classList.toogle('input-wrapper');
+            point.classList.toogle('done');
         })
 
         // проверка на наличие текста в input, чтобы не выводить пустой пункт списка
@@ -26,11 +26,10 @@ pointInput.addEventListener('keydown', function(event) {
         }
 
     }
-    // очистка input после добавления нового пункта списка
+    point.value = '';
 
 });
 
-point.value = '';
 
 
 
