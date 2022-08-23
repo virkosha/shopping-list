@@ -1,45 +1,37 @@
 /* Новые элементы должны добавляться в список по нажатию на Enter */
-// создаю переменную списка и ищу ее в доме
-const list = document.querySelector('.groceries');
-// создаю переменную пункта списка и ищу ее в доме
-const pointList = document.querySelector('.input-wrapper');
+
 // создаю переменную, которая будет содержать в себе информацию ввводимую пользователем 
-const pointNew = document.querySelector('input');
+const pointInput = document.querySelector('input');
 // добавляем обработчик события на 
-list.addEventListener('keydown', function(event) {
+pointInput.addEventListener('keydown', function(event) {
 
     // проверка какая клавиша была нажата с клавиатуры, если Enter, то выполняем действия function
-    if (event.key == Enter) {
+    if (event.key == 'Enter') {
         // создаю новый элемент
-        const pointListNew = document.createElement('div');
-        // добавляю ему класс
-        pointListNew.classList.add(input - wrapper);
-        // создаю новому div input, куда пользоваель будет вводить текст списка
-        document.createElement('input');
-        // вставляю input внутрь нового div, будущего пункта списка
-        pointListNew.append(pointNew);
-        // создаю переменную, которая хранит текст, который ввел пользователь
-        const pointText = pointNew.value;
-        newPoint.textContent = pointText;
+        const point = document.createElement('div');
+
+        const pointText = point.value;
+        point.textContent = pointText;
+
+        point.addEventListener('click', function() {
+            point.classList.toogle('input-wrapper');
+        })
 
         // проверка на наличие текста в input, чтобы не выводить пустой пункт списка
-        if (pointText != ' ') {
-            // вставляю новый пункт списка (иконка + текст пункта) в список
-            list.appent('pointList');
+        if (pointText != '') {
+
+            // вставляю новый пункт списка в список, объявив в переменную обертку-контейнер
+            const list = document.querySelector('.items');
+            list.appent('point');
         }
 
     }
     // очистка input после добавления нового пункта списка
-    point.value = '';
-
-
 
 });
 
-// вешаю обработчик на клик, который будет навешивать/убирать класс - свойство зачеркивание
-pointList.addEventListener('click', function() {
-    pointList.classList.toggle(input - wrapper);
-})
+point.value = '';
+
 
 
 
